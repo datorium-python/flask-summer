@@ -1,0 +1,21 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <div class="row mt-4 d-flex justify-content-center">
+      <div class="col-md-8">
+        {{ form.csrf_token() }}
+
+        <form action="{{ url_for('post.make_post') }}" method="post">
+          {% include "shared/flash.html" %}
+
+          <div class="form-group mb-4">
+            <label for="exampleFormControlTextarea1">Make a new post</label>
+            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Make post</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>

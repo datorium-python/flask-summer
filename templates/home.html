@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+{% if session.is_logged_in %}
+{% include "shared/post.html" %}
+{% endif %}
+
+<div class="album py-5 bg-light">
+  <div class="container">
+
+    <div class="row">
+      {% for post in posts %}
+      {% include "shared/post_card.html" %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
